@@ -5,24 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Merci pour ton achat - Yatsun'ARK PvE</title>
   <style>
-    body, html {
-      margin: 0; padding: 0; height: 100%;
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #f0f0f0;
-      background-image: url('images/tropical_background.png.png');
-      background-size: cover;
-      background-position: center;
-      filter: blur(1px);
       overflow-x: hidden;
+      background: #000;
       position: relative;
     }
-    body::after {
-      content: "";
+
+    .background-blur {
       position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('images/tropical_background.png');
+      background-size: cover;
+      background-position: center;
+      filter: blur(5px);
+      z-index: -2;
+      transform: scale(1.05);
+    }
+
+    .background-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       background: rgba(0, 0, 0, 0.5);
       z-index: -1;
     }
+
     main {
       position: relative;
       z-index: 1;
@@ -31,20 +48,23 @@
       background: rgba(31, 31, 31, 0.85);
       padding: 30px;
       border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
       text-align: center;
     }
+
     main h1 {
       font-size: 2.8rem;
       color: #00bfff;
       margin-bottom: 20px;
     }
+
     main p {
       font-size: 1.4rem;
       color: #ddd;
       line-height: 1.5;
       margin-bottom: 25px;
     }
+
     a.discord-link {
       color: #7289da;
       text-decoration: none;
@@ -55,9 +75,11 @@
       gap: 8px;
       transition: color 0.3s ease;
     }
+
     a.discord-link:hover {
       color: #99aab5;
     }
+
     a.discord-link svg {
       width: 28px;
       height: 28px;
@@ -66,6 +88,9 @@
   </style>
 </head>
 <body>
+  <div class="background-blur"></div>
+  <div class="background-overlay"></div>
+
   <main>
     <h1>Merci pour ton achat !</h1>
     <p>Rejoins le discord pour envoyer ton nom de joueur + map afin de recevoir ta commande !</p>
