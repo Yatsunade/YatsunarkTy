@@ -181,15 +181,16 @@
     const select = document.getElementById('language-select');
     const flag = document.getElementById('flag');
 
-    function updateLanguage(lang) {
-      flag.className = 'flag ' + lang;
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[lang] && translations[lang][key]) {
-          el.textContent = translations[lang][key];
-        }
-      });
+function updateLanguage(lang) {
+  flag.src = 'images/' + lang + '.png';
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      el.textContent = translations[lang][key];
     }
+  });
+}
+
 
     select.addEventListener('change', (e) => {
       updateLanguage(e.target.value);
