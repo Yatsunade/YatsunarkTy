@@ -142,6 +142,20 @@ main {
   color: #ccc;
   opacity: 0.85;
 }
+    .logo-container {
+  max-width: 300px;
+  margin: 0 auto 30px;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+}
+
+.logo-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
   </style>
 </head>
 <body>
@@ -152,7 +166,9 @@ main {
     <option value="en">EN</option>
   </select>
 </div>
-
+<div class="logo-container">
+  <img src="images/Logo_Yatsu.png.png" alt="Logo Yatsun'ARK" />
+</div>
   <main>
     <h1 data-i18n="thankYouTitle">Merci pour ton achat !</h1>
     <p data-i18n="thankYouText">
