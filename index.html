@@ -83,33 +83,42 @@
       height: 28px;
       fill: #7289da;
     }
-    .lang-select {
-      position: fixed;
-      top: 15px;
-      right: 15px;
-      background: rgba(31, 31, 31, 0.8);
-      padding: 6px 12px;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      z-index: 10;
-      font-weight: bold;
-      color: #ddd;
-      user-select: none;
-    }
-    .lang-selector select {
-      background: rgba(0,0,0,0.6);
-      color: white;
-      border: 1px solid #00bfff;
-      padding: 6px 10px;
-      font-size: 1rem;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    .lang-select select:focus {
-      outline: none;
-    }
+.lang-selector {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0,0,0,0.6);
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #00bfff;
+  z-index: 10;
+}
+
+.lang-selector img {
+  width: 24px;
+  height: 16px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.lang-selector select {
+  background: rgba(0, 0, 0, 0.7);
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.lang-selector select option {
+  background-color: #222;
+  color: white;
+}
+
     .flag {
       width: 24px;
       height: 16px;
@@ -133,13 +142,14 @@
   </style>
 </head>
 <body>
-  <div class="lang-select" aria-label="Choix de la langue / Language selection">
-    <span id="flag" class="flag fr" aria-hidden="true"></span>
-    <select id="language-select" aria-label="Choisir la langue / Choose language">
-      <option value="fr" selected>FR</option>
-      <option value="en">EN</option>
-    </select>
-  </div>
+<div class="lang-selector">
+  <img id="flag-icon" src="images/fr.png" alt="Drapeau langue" />
+  <select id="languageSwitcher">
+    <option value="fr">FR</option>
+    <option value="en">EN</option>
+  </select>
+</div>
+
   <main>
     <h1 data-i18n="thankYouTitle">Merci pour ton achat !</h1>
     <p data-i18n="thankYouText">
