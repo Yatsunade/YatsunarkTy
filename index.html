@@ -5,15 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Merci pour ton achat - Yatsun'ARK PvE</title>
   <style>
-    body, html {
-      margin: 0; padding: 0; height: 100%;
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #f0f0f0;
+      overflow-x: hidden;
+      width: 100%;
+    }
+        body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
       background-image: url('images/tropical_background.png.png');
       background-size: cover;
       background-position: center;
-      overflow-x: hidden;
-      position: relative;
+      background-repeat: no-repeat;
+      filter: blur(6px);
+      z-index: -2;
+      transform: scale(1.05);
     }
     body::after {
       content: "";
